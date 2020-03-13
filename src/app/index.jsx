@@ -13,6 +13,7 @@ import Toolbar from './toolbar';
 import Sidebar from './sidebar';
 import Editor from './editor';
 import Preview from './preview';
+import Bottombar from './bottombar';
 
 const reducers = combineReducers({
   user: UserReducer,
@@ -20,7 +21,10 @@ const reducers = combineReducers({
   sidebar: SidebarReducer
 });
 
-const store = createStore(reducers);
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+  && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = createStore(reducers, devTools);
 
 export default () => (
   <div className="app">
@@ -30,6 +34,7 @@ export default () => (
       <Sidebar />
       <Editor />
       <Preview />
+      <Bottombar />
     </Provider>
   </div>
 );

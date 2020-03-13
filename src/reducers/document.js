@@ -6,9 +6,9 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'DOC_TITLE_CHANGED':
-      return { title: action.title, ...state }
+      return { ...state, title: action.title }
     case 'DOC_CONTENT_CHANGED':
-      return { content: action.content, ...state }
+      return { ...state, content: action.content }
     default:
       return state;
   }

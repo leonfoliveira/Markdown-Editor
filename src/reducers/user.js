@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   logged: false,
-  auth: {}
+  auth: {},
+  docs: []
 }
 
 export default (state = INITIAL_STATE, action) => {

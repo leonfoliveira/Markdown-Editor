@@ -6,7 +6,7 @@ export default props => (
       type="text"
       className="input"
       value={props.title}
-      onClick={props.onClick}
+      onChange={props.onChange}
     />
     <span className="extension">.md</span>
   </div>

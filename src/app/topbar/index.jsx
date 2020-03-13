@@ -17,7 +17,7 @@ export default () => {
       />
       <TitleInput
         title={title}
-        onClick={(e) => dispatch({
+        onChange={(e) => dispatch({
           type: 'DOC_TITLE_CHANGED',
           title: e.target.value
         })}
