@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import SidebarButton from './sidebarButton';
 import TitleInput from './titleInput';
 
 export default () => {
@@ -10,11 +9,12 @@ export default () => {
 
   return (
     <div className="topbar">
-      <SidebarButton
-        onClick={() => dispatch({
-          type: 'SIDEBAR_SHOW'
-        })}
-      />
+      <button
+        className="btn"
+        onClick={() => dispatch({ type: 'SIDEBAR_SHOW' })}
+      >
+        <i className="fa fa-bars"></i>
+      </button>
       <TitleInput
         title={title}
         onChange={(e) => dispatch({

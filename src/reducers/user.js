@@ -1,7 +1,13 @@
 const INITIAL_STATE = {
   logged: false,
-  auth: {},
-  docs: []
+  auth: {
+    email: 'sample@sample',
+    password: '123'
+  },
+  docs: [
+    { _id: 0, title: 'newDocument1' },
+    { _id: 1, title: 'newDocument2' }
+  ]
 }
 
 export default (state = INITIAL_STATE, action) => {
