@@ -1,3 +1,7 @@
+:root {
+  --material-green: #4caf50;
+}
+
 .app {
   height: 100vh;
 

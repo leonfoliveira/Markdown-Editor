@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   title: 'newdocument',
-  content: ''
+  content: '# Dorime \n## Ameno\nlorem ipsum dolor'
 }
 
 export default (state = INITIAL_STATE, action) => {

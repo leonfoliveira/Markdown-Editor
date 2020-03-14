@@ -7,7 +7,7 @@
 
 .topbar-sidebar {
   border: none;
-  background-color: #222;
+  background-color: var(--material-green);
   color: #fff;
   padding: 0 15px;
   font-size: 20px;
@@ -36,7 +36,7 @@
 }
 
 .topbar-download {
-  background-color: #222;
+  background-color: var(--material-green);
   border: none;
   color: #fff;
   height: 100%;
