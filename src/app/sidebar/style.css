@@ -1,3 +1,82 @@
 .sidebar {
-  grid-area: sidebar;
+  position: absolute;
+  background-color: #222;
+  height: 100vh;
+  width: 300px;
+}
+
+.sidebar-close {
+  background-color: var(--material-green);
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.sidebar-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.sidebar-user i {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.user-logout {
+  background-color: var(--material-green);
+  border: none;
+  color: white;
+  font-size: 25px;
+  padding: 5px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.sidebar-document-wrap {
+  background-color: #272727;
+  padding: 10px 0;
+}
+
+.sidebar-document {
+  display: flex;  
+}
+
+.doc-open {
+  flex: 1;
+  font-size: 15px;
+  background-color: #333;
+  border: none;
+  margin: 2px 0;
+  padding: 7px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.doc-del {
+  background-color: var(--material-green);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  margin: 2px 0;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.doc-new-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.doc-new {
+  background-color: var(--material-green);
+  border: none;
+  color: white;
+  font-size: 25px;
+  padding: 5px 45px;
+  margin: 20px 0;
+  cursor: pointer;
 }

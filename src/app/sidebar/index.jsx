@@ -22,17 +22,21 @@ export default () => {
         email={user.auth.email}
         logout={() => dispatch({ type: 'USER_LOGOUT' })}
       />
-      {
-        user.docs.map(doc => (
-          <Document
-            key={doc._id}
-            title={doc.title}
-          />
-        ))
-      }
-      <button className="doc-new">
-        <i className="fa fa-plus"></i>
-      </button>
+      <div className="sidebar-document-wrap">
+        {
+          user.docs.map(doc => (
+            <Document
+              key={doc._id}
+              title={doc.title}
+            />
+          ))
+        }
+      </div>
+      <div className="doc-new-wrap">
+        <button className="doc-new">
+          <i className="fa fa-plus"></i>
+        </button>
+      </div>
     </div>
   )
 }
