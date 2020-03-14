@@ -8,6 +8,5 @@ export default props => (
       value={props.title}
       onChange={props.onChange}
     />
-    <span className="extension">.md</span>
   </div>
 )

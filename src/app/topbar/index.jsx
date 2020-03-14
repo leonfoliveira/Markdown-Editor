@@ -22,6 +22,9 @@ export default () => {
           title: e.target.value
         })}
       />
+      <button className="topbar-download">
+        <i className="fa fa-download"></i>
+      </button>
     </div>
   )
 }
