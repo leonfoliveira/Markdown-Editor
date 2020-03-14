@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default props => (
+export default () => (
   <div className="sidebar-button">
     <button className="btn">
       <i className="fa fa-bars"></i>
