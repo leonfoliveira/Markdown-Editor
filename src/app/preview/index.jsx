@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Converter } from 'react-showdown';
 
+import './style.css';
+
 import MarkdownArea from './markdownArea';
 
 export default () => {

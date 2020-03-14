@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import './style.css';
+
 import TitleInput from './titleInput';
 
 export default () => {
@@ -10,7 +12,7 @@ export default () => {
   return (
     <div className="topbar">
       <button
-        className="btn"
+        className="topbar-sidebar"
         onClick={() => dispatch({ type: 'SIDEBAR_SHOW' })}
       >
         <i className="fa fa-bars"></i>
@@ -22,9 +24,11 @@ export default () => {
           title: e.target.value
         })}
       />
-      <button className="topbar-download">
-        <i className="fa fa-download"></i>
-      </button>
+      <div className="topbar-download-wrap">
+        <button className="topbar-download">
+          <i className="fa fa-download"></i>
+        </button>
+      </div>
     </div>
   )
 }

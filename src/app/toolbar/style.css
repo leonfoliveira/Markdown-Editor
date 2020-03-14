@@ -1,0 +1,16 @@
+.toolbar {
+  grid-area: toolbar;
+  border-bottom: 1px solid #aaa;
+}
+
+.tool-button {
+  height: 100%;
+  border: none;
+  border-right: 1px solid #aaa;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 15px;
+  font-family: monospace;
+  font-weight: bold;
+}

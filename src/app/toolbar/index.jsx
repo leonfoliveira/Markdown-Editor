@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 import Button from './button';
 
 export default () => {

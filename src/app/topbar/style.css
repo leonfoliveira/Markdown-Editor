@@ -1,0 +1,48 @@
+.topbar {
+  grid-area: topbar;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-sidebar {
+  border: none;
+  background-color: #222;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.title-input {
+  border: none;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.extension {
+  color: #fff;
+}
+
+.topbar-download-wrap {
+  flex: 1;
+  height: 100%;
+}
+
+.topbar-download {
+  background-color: #222;
+  border: none;
+  color: #fff;
+  height: 100%;
+  padding: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  justify-self: flex-end;
+  float: right;
+}

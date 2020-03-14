@@ -14,14 +14,15 @@ export default props => {
   });
 
   return (
-    <div className="title-input">
+    <div className="title-left">
       <input
         type="text"
-        className="input"
+        className="title-input"
         value={props.title}
         onChange={handleChange}
         id="title-input"
-      />.md
+      />
+      <span className="extension">.md</span>
     </div>
   )
 }

@@ -1,0 +1,12 @@
+.app {
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 50px 30px 1fr 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "topbar topbar"
+    "toolbar toolbar"
+    "editor preview"
+    "bottombar bottombar";
+}
