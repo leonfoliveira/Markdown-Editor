@@ -7,6 +7,7 @@ import TitleInput from './titleInput';
 
 export default () => {
   const title = useSelector(state => state.doc.title);
+  const empty = useSelector(state => state.doc.empty);
   const dispatch = useDispatch();
 
   return (
@@ -17,18 +18,26 @@ export default () => {
       >
         <i className="fa fa-bars"></i>
       </button>
-      <TitleInput
-        title={title}
-        onChange={(e) => dispatch({
-          type: 'DOC_TITLE_CHANGED',
-          title: e.target.value
-        })}
-      />
-      <div className="topbar-download-wrap">
-        <button className="topbar-download">
-          <i className="fa fa-download"></i>
-        </button>
-      </div>
+      {
+        empty
+        ? null
+        : <TitleInput
+          title={title}
+          onChange={(e) => dispatch({
+            type: 'DOC_TITLE_CHANGED',
+            title: e.target.value
+          })}
+        />
+      }
+      {
+        empty
+        ? null
+        : <div className="topbar-download-wrap">
+            <button className="topbar-download">
+              <i className="fa fa-download"></i>
+            </button>
+          </div>
+      }      
     </div>
   )
 }

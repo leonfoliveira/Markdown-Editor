@@ -1,33 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 
 import './style.css';
 
 import LoginForm from './form';
+import { login } from './actions';
 
 export default () => {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
-    if (e) e.preventDefault();
-
-    const res = await axios.get(`http://127.0.0.1:3030/api/user/?email=${user.email}`);
-
-    if (res.status === 200) {
-      const doc = await axios.get(`http://127.0.0.1:3030/api/document/?user=${res.data._id}`);
-
-      dispatch({
-        type: 'USER_LOGIN',
-        user: { ...res.data, documents: doc.data }
-      });
-    }
-
-    console.log(user);
+    e.preventDefault();
+    dispatch(login(e.target.value));
   }
 
-  handleLogin();
+  dispatch(login(user.email));
 
   return (
     <div className="login">

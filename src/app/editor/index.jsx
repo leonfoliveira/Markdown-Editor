@@ -4,19 +4,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 
 import Textarea from './textarea';
+import { update } from './actions';
 
 export default () => {
-  const content = useSelector(state => state.doc.content);
+  const doc = useSelector(state => state.doc);
   const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    dispatch(update(e.target.value));
+  }
 
   return (
     <div className="editor">
       <Textarea
-        content={content}
-        onChange={(e) => dispatch({
-          type: 'DOC_CONTENT_CHANGED',
-          content: e.target.value
-        })}
+        content={doc.content}
+        onChange={(e) => handleChange(e)}
       />
     </div>
   )

@@ -33,10 +33,12 @@ export default () => {
       {
         empty
         ? <div className="blank">empty</div>
-        : <div>
-            <Editor />
-            <Preview />
-          </div>
+        : <Editor />            
+      }
+      {
+        empty
+        ? <div className="blank">empty</div>
+        : <Preview />
       }
       <Bottombar />
     </div>

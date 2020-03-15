@@ -10,6 +10,13 @@ export default props => {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
+  const handleOpen = (doc) => {
+    dispatch({
+      type: 'DOC_OPENED',
+      doc
+    });
+  }
+
   return (
     <div className={`sidebar ${props.visible ? 'visible' : 'hidden'}`}>
       <button
@@ -27,8 +34,8 @@ export default props => {
           user.documents.map(doc => (
             <Document
               key={doc._id}
-              id={doc._id}
-              title={doc.title}
+              doc={doc}
+              handleOpen={handleOpen}
             />
           ))
         }
