@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+  empty: true,
   title: 'newdocument',
   content: '# Dorime \n## Ameno\nlorem ipsum dolor'
 }
@@ -6,7 +7,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'DOC_OPENED':
-      return { ...action.doc }
+      return { empty: false, ...action.doc }
     case 'DOC_TITLE_CHANGED':
       return { ...state, title: action.title }
     case 'DOC_CONTENT_CHANGED':

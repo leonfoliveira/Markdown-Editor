@@ -14,9 +14,10 @@ import Bottombar from './bottombar';
 
 export default () => {
   const sidebarVisible = useSelector(state => state.sidebar.visible);
-  const user = useSelector(state => state.user);
+  const logged = useSelector(state => state.user.logged);
+  const empty = useSelector(state => state.doc.empty);
 
-  if (!user.logged) {
+  if (!logged) {
     return (
       <div className="app">
         <Login />
@@ -25,12 +26,18 @@ export default () => {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${empty ? 'empty' : 'populated'}`}>
       <Topbar />
       <Toolbar />
       <Sidebar visible={sidebarVisible} />
-      <Editor />
-      <Preview />
+      {
+        empty
+        ? <div className="blank">empty</div>
+        : <div>
+            <Editor />
+            <Preview />
+          </div>
+      }
       <Bottombar />
     </div>
   );

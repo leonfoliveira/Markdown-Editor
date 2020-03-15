@@ -11,17 +11,23 @@ export default () => {
   const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
 
     const res = await axios.get(`http://127.0.0.1:3030/api/user/?email=${user.email}`);
 
-    if (res.data[0]) {
+    if (res.status === 200) {
+      const doc = await axios.get(`http://127.0.0.1:3030/api/document/?user=${res.data._id}`);
+
       dispatch({
         type: 'USER_LOGIN',
-        user: res.data[0]
+        user: { ...res.data, documents: doc.data }
       });
     }
+
+    console.log(user);
   }
+
+  handleLogin();
 
   return (
     <div className="login">
