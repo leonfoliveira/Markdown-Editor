@@ -2,14 +2,25 @@
   position: absolute;
   background-color: #222;
   height: 100vh;
+  user-select: none;
+  transition: width 100ms;
+}
+
+.sidebar.visible {
   width: 300px;
+}
+
+.sidebar.hidden {
+  width: 0px;
+  visibility: hidden;
+  /* display: none; */
 }
 
 .sidebar-close {
   background-color: var(--material-green);
   border: none;
   color: #fff;
-  font-size: 30px;
+  font-size: 45px;
   padding: 0 15px;
   cursor: pointer;
 }

@@ -12,13 +12,13 @@ import Preview from './preview';
 import Bottombar from './bottombar';
 
 export default () => {
-  const sidebar = useSelector(state => state.sidebar.visible);
+  const sidebarVisible = useSelector(state => state.sidebar.visible);
 
   return (
     <div className="app">
       <Topbar />
       <Toolbar />
-      { sidebar ? <Sidebar /> : null }
+      <Sidebar visible={sidebarVisible} />
       <Editor />
       <Preview />
       <Bottombar />

@@ -4,10 +4,22 @@
   color: #ccc;
   padding: 0 30px;
   text-align: center;
+  font-size: 13px;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: center;
+  user-select: none;
+}
+
+.bottombar-author {
+  text-align: right;
+}
+
+.bottombar-year {
+  text-align: left;
 }
 
 .bottombar-github {
   color: #fff;
-  margin: 0 10px;
-  font-size: 18px;
+  font-size: 17px;
 }

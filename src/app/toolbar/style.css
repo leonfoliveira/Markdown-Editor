@@ -1,6 +1,7 @@
 .toolbar {
   grid-area: toolbar;
   border-bottom: 1px solid #aaa;
+  user-select: none;
 }
 
 .tool-button {

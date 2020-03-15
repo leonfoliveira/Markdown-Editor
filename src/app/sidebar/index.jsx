@@ -6,12 +6,12 @@ import './style.css';
 import UserProfile from './userProfile';
 import Document from './document';
 
-export default () => {
+export default props => {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${props.visible ? 'visible' : 'hidden'}`}>
       <button
         className="sidebar-close"
         onClick={() => dispatch({ type: 'SIDEBAR_HIDE' })}
