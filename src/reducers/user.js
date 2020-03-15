@@ -1,7 +1,5 @@
 const INITIAL_STATE = {
   logged: false,
-  email: 'sample@sample',
-  password: '123'
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -13,7 +11,9 @@ export default (state = INITIAL_STATE, action) => {
     case 'USER_EMAIL_CHANGED':
       return { ...state, email: action.email }
     case 'USER_PASSWORD_CHANGED':
-        return { ...state, password: action.password }
+      return { ...state, password: action.password }
+    case 'USER_DOCS_CHANGED':
+      return { ...state, documents: action.documents }
     default:
       return state;
   }

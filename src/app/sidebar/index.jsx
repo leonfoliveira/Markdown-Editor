@@ -5,17 +5,11 @@ import './style.css';
 
 import UserProfile from './userProfile';
 import Document from './document';
+import { openDocument, newDocument, deleteDocument } from '../actions';
 
 export default props => {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
-
-  const handleOpen = (doc) => {
-    dispatch({
-      type: 'DOC_OPENED',
-      doc
-    });
-  }
 
   return (
     <div className={`sidebar ${props.visible ? 'visible' : 'hidden'}`}>
@@ -31,17 +25,20 @@ export default props => {
       />
       <div className="sidebar-document-wrap">
         {
-          user.documents.map(doc => (
+          user.documents
+          ? user.documents.map(doc => (
             <Document
               key={doc._id}
               doc={doc}
-              handleOpen={handleOpen}
+              handleOpen={() => dispatch(openDocument(doc))}
+              handleDelete={() => dispatch(deleteDocument(doc._id))}
             />
           ))
+          : null
         }
       </div>
       <div className="doc-new-wrap">
-        <button className="doc-new">
+        <button className="doc-new" onClick={() => dispatch(newDocument())}>
           <i className="fa fa-plus"></i>
         </button>
       </div>
