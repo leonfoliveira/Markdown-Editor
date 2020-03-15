@@ -1,0 +1,31 @@
+.login {
+  background-color: #333;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.login-email, .login-password {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.login-submit {
+  background-color: var(--material-green);
+  border: none;
+  font-size: 20px;
+  padding: 10px 0;
+  margin-top: 20px;
+  color: #fff;
+  cursor: pointer;
+}

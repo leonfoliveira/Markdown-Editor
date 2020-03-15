@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+
+import promise from 'redux-promise';
+import multi from 'redux-multi';
+import thunk from 'redux-thunk';
 
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -21,7 +25,7 @@ const reducers = combineReducers({
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const store = createStore(reducers, devTools);
+const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -19,14 +19,15 @@ export default props => {
         <i className="fa fa-angle-left"></i>
       </button>
       <UserProfile
-        email={user.auth.email}
+        email={user.email}
         logout={() => dispatch({ type: 'USER_LOGOUT' })}
       />
       <div className="sidebar-document-wrap">
         {
-          user.docs.map(doc => (
+          user.documents.map(doc => (
             <Document
               key={doc._id}
+              id={doc._id}
               title={doc.title}
             />
           ))
