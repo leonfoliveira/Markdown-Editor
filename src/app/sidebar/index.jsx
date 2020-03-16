@@ -13,12 +13,14 @@ export default props => {
 
   return (
     <div className={`sidebar ${props.visible ? 'visible' : 'hidden'}`}>
-      <button
-        className="sidebar-close"
-        onClick={() => dispatch({ type: 'SIDEBAR_HIDE' })}
-      >
-        <i className="fa fa-angle-left"></i>
-      </button>
+      <div className="sidebar-close-wrap">
+        <button
+          className="sidebar-close"
+          onClick={() => dispatch({ type: 'SIDEBAR_HIDE' })}
+        >
+          <i className="fa fa-angle-left"></i>
+        </button>
+      </div>
       <UserProfile
         email={user.email}
         logout={() => dispatch({ type: 'USER_LOGOUT' })}

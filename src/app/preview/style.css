@@ -3,4 +3,6 @@
   padding: 20px;
   color: #171717;
   user-select: none;
+  overflow: auto;
+  border-left: 1px solid #aaa;
 }

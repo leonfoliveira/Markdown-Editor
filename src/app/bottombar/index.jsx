@@ -8,7 +8,7 @@ export default () => {
       <div className="bottombar-author">
         Leonardo F Oliveira
       </div>
-      <a className="bottombar-github" href="https://github.com/leonfoliveira">
+      <a className="bottombar-github" href="https://github.com/leonfoliveira/Markdown-Editor">
         <i className="fa fa-github"></i>
       </a>
       <div className="bottombar-year">
