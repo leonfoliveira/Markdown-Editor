@@ -4,18 +4,31 @@ import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 
 import LoginForm from './form';
-import { login } from '../actions';
+import { login, openDocument, getDocuments } from '../actions';
 
 export default () => {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    dispatch(login(e.target.value));
+    dispatch([
+      login(e.target.value),
+      getDocuments(),
+      openDocument(user.documents[0])
+    ]);
   }
 
-  dispatch(login('sample@sample'));
+  /*
+  // Temporary
+  */
+  dispatch([
+    login('sample@sample'),
+    getDocuments()
+  ]);
+  /*
+  // Temporary
+  */
 
   return (
     <div className="login">

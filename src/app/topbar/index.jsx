@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 
 import TitleInput from './titleInput';
-import { titleChange, sidebarShow } from '../actions';
+import { titleChange, sidebarShow, getDocuments } from '../actions';
 
 export default () => {
   const title = useSelector(state => state.doc.title);
@@ -15,7 +15,10 @@ export default () => {
     <div className="topbar">
       <button
         className="topbar-sidebar"
-        onClick={() => dispatch(sidebarShow())}
+        onClick={() => dispatch([
+          sidebarShow(),
+          getDocuments()
+        ])}
       >
         <i className="fa fa-bars"></i>
       </button>
