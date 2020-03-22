@@ -42,6 +42,18 @@
     "bottombar bottombar";
 }
 
+.empty-open {
+  position: absolute;
+  font-size: 25px;
+  top: 90px;
+  left: 10px;
+}
+
+.empty-open > i {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
 .blank {
   display: flex;
   justify-content: center;

@@ -32,7 +32,15 @@ export default () => {
       <Sidebar visible={sidebarVisible} />
       {
         empty
-        ? <div className="blank">empty</div>
+        ? (
+          <div className="blank">
+            <span className="empty-open">
+              <i className="fa fa-arrow-up"></i>
+              Open/Create Document
+            </span>
+            empty
+          </div>
+          )
         : <Editor />            
       }
       {

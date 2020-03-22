@@ -6,6 +6,7 @@
   transition: width 100ms;
   display: grid;
   grid-template-rows: 50px 200px 1fr 75px;
+  z-index: 99;
 }
 
 .sidebar.visible {
