@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const URL = 'http://127.0.0.1:3030/api';
 
+/*
+** These functions need to be refactored
+*/
+
 export const contentChange = content => {
   return async (dispatch, getState) => {
     await dispatch({
@@ -27,7 +31,7 @@ export const getDocuments = () => {
 
 export const login = email => {
   return async dispatch => {
-    const res = await axios.get(`${URL}/user/?email=${email}`);    
+    const res = await axios.get(`${URL}/user/?email=${email}`);
 
     if (res.status === 200) {
       dispatch({

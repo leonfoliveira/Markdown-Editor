@@ -20,14 +20,14 @@ export default () => {
   }
 
   /*
-  // Temporary
+  ** Temporary auto login
   */
   dispatch([
     login('sample@sample'),
     getDocuments()
   ]);
   /*
-  // Temporary
+  ** Temporary auto login
   */
 
   return (
